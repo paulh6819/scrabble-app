@@ -269587,3 +269587,100 @@ function vowelsInOrder(x){
 
 
 console.log(vowelsInOrder(`${wordsArray} these are vowles in order ` ));
+
+
+
+
+
+
+let arrayOfAnagrams = ["cat", "bat", "mic", "lot", "tac", "cim", "tol", "fill", "tab", "lilf", "hat", "tol", "icm"]
+
+function groupOfAnagrams (x){
+
+    let anagramsObejct = {}
+
+  for (word of x){
+     
+           let splitSortedJoinedWord = word.split("").sort().join("");
+           if ( anagramsObejct[splitSortedJoinedWord] != null){
+                anagramsObejct[splitSortedJoinedWord].push(word);
+           }else{
+                   anagramsObejct[splitSortedJoinedWord] = [word]
+
+           }
+
+           
+  }
+
+  
+
+  return Object.values(anagramsObejct)
+        
+            
+}
+console.log(groupOfAnagrams(arrayOfAnagrams))
+
+
+function practiceWordsCatFiveletters (x){
+
+     result = []
+
+
+     for ( let i = 0; i < x.length; i++){
+
+           if ( x[i].includes("CAT") && x[i].length === 5){
+              
+                result.push(x[i])
+           }
+     }
+  
+         return result
+}
+
+console.log(practiceWordsCatFiveletters(wordsArray))
+
+function noVowelsAGIN (x){
+
+            result = []
+    
+    for ( let i = 0; i < x.length; i++){
+
+                       if ( !x[i].includes("E") && !x[i].includes("A") && !x[i].includes("U") && !x[i].includes("O") && !x[i].includes("Y") && !x[i].includes("I")){
+                          
+                           result.push(x[i])
+                       }
+                 }
+          return result      
+}
+
+console.log(noVowelsAGIN(wordsArray))
+
+
+function recountXYZ (x){
+  
+    let joinedText = x.join("");
+
+
+      let newObject = { Q:0, X:0 , Z:0};
+
+    for ( let i of joinedText){
+        if ( i === "Q"){
+
+               newObject.Q += 1
+        }
+
+        else if ( i === "X"){
+            newObject.X += 1
+        }
+
+       else if ( i === "Z"){
+
+           newObject.Z += 1
+       }
+    }
+      return newObject 
+
+}
+
+console.log(recountXYZ(wordsArray));
+
