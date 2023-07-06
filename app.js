@@ -269684,3 +269684,65 @@ function recountXYZ (x){
 
 console.log(recountXYZ(wordsArray));
 
+function longestNOvowelsPractice(x){
+
+let wordsWIthNoVowels = [];
+
+let accumlator = ""
+
+      for ( let i of x){
+          
+              if ( !i.includes("I") && !i.includes("E") && !i.includes("O") && !i.includes("U") && !i.includes("A")){
+                wordsWIthNoVowels.push(i)
+              }
+      }
+    
+
+  
+
+  for (let i of wordsWIthNoVowels ){
+
+       if( i.length > accumlator.length){
+            accumlator = i
+       }
+  }
+
+
+
+
+      return accumlator
+}
+
+console.log(longestNOvowelsPractice(wordsArray));
+
+
+
+function allVowelsShortest (x){
+
+        let wordsWithAllVowels = [];
+
+
+             for ( let i of x){
+
+                    if ( i.includes("A") && i.includes("I") && i.includes("U") && i.includes("O") && i.includes("E")){
+
+                        wordsWithAllVowels.push(i);
+
+                    }
+             }
+
+             let accumolator = "aaaaaaaaaaaaaaaaaaaa"
+
+             for ( let i of wordsWithAllVowels){
+                if ( i.length < accumolator.length){
+
+                    accumolator = i;
+                }
+                  
+                    
+             }
+
+             return accumolator;
+}
+
+console.log(allVowelsShortest(wordsArray));
